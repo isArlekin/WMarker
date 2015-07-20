@@ -1,8 +1,8 @@
 var gulp        = require('gulp'),
     sass        = require('gulp-sass'),
     jade        = require('gulp-jade'),
-    concat      = require('gulp-concat'),
     plumber     = require('gulp-plumber'),
+    concat      = require('gulp-concat'),
     browserSync = require('browser-sync'),
     useref      = require('gulp-useref'),
     gulpif      = require('gulp-if'),
@@ -11,18 +11,31 @@ var gulp        = require('gulp'),
     wiredep     = require('wiredep').stream,
     reload      = browserSync.reload;
 
-gulp.task('server', ['sass','jade'], function() {
-   browserSync({
-       server: { baseDir: "./_src/"}
-   });
 
-    gulp.watch("_src/scss/**/*.sass",['sass']);
-    gulp.watch("_src/jade/**/*.jade",['jade']);
+gulp.task('serve', ['sass', 'jade'], function() {
+
+    browserSync({
+
+        server: { baseDir: "./_src/" }
+
+    });
+
+    /* для простых приложений без jade sass и прочего */
+    // gulp.watch("app/*.html").on('change', reload);
+    // gulp.watch("app/css/*.css").on('change', reload);
+    // gulp.watch("app/js/*.js").on('change', reload);
+
+    gulp.watch("_src/scss/**/*.scss", ['sass']);
+    gulp.watch("_src/jade/**/*.jade", ['jade']);
     gulp.watch("_src/js/modules/*.js",['js']);
+
 });
 
-gulp.task('sass',function (){
-    gulp.src('./_src/scss/*.sass')
+/* DEV TASKS */
+
+gulp.task('sass', function () {
+
+    gulp.src('./_src/scss/*.scss')
         .pipe(plumber())
         .pipe(sass())
         .pipe(gulp.dest('./_src/css'))
@@ -30,23 +43,21 @@ gulp.task('sass',function (){
     );
 });
 
-gulp.task('jade',function (){
+gulp.task('jade', function () {
     gulp.src('./_src/jade/pages/*.jade')
         .pipe(plumber())
         .pipe(jade({
             pretty: true
         }))
         .pipe(gulp.dest('./_src/'))
-        .pipe(reload({stream: true})
-    );
+        .pipe(reload({stream: true}));
 });
 
-gulp.task('js',function (){
+gulp.task('js', function () {
     gulp.src('./_src/js/modules/*.js')
         .pipe(concat('main.js'))
         .pipe(gulp.dest('./_src/js/'))
-        .pipe(reload({stream: true})
-    );
+        .pipe(reload({stream: true}));
 });
 
 gulp.task('wiredep', function () {
@@ -57,6 +68,21 @@ gulp.task('wiredep', function () {
         .pipe(gulp.dest('./_src/jade/'));
 });
 
-/*WRITE BUILDING TASK FOR END PROJECT*/
+/* END OF DEV TASKS */
 
-gulp.task('default',['server']);
+/* BUILD TASKS */
+
+gulp.task('build', function () {
+    var assets = useref.assets();
+    gulp.src('./_src/*.html')
+        .pipe(assets)
+        .pipe(gulpif('*.js', uglify()))
+        .pipe(gulpif('*.css', minifyCss()))
+        .pipe(assets.restore())
+        .pipe(useref())
+        .pipe(gulp.dest('./_build/'));
+});
+
+/* END OF BUILD TASKS */
+
+gulp.task('default', ['serve']);

@@ -4,13 +4,17 @@ html
         meta(name='viewport' content='width=device-width')
 
         title WhaterMarker
-
+        // Подключение таблиц стилей
         link(rel='stylesheet' type='text/css' href='/bower/normalize.css/normalize.css')
         link(rel='stylesheet' type='text/css' href='/css/main.css' media='screen, projection, print')
 
+        // Подключение модернайзера
         link(href='/bower/modernizr/modernizr.js')
     body
         .wrapper
             .maincontent
 
                 block content
+
+        include ../common/footer.jade
+
