@@ -1,0 +1,16 @@
+.footer {
+  width: 100%;
+  min-width: 1024px;
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  &__wrapper {
+    width: 1024px;
+    margin: 0 auto;
+    vertical-align: middle;
+    font-size: 12px;
+    font-family: "fira_sansbold";
+    color: #fff;
+    text-align: center;
+  }
+}

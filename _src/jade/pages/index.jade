@@ -1,14 +1,15 @@
 extends ../layout/layout
-//Content's index
-block content
+
+block options
     // Language page
     include ../common/language.jade
-
     // Social icons
     include ../common/socials.jade
-
-    // Main field for drag and drop
-    include ../common/field.jade
+//Content's index
+block content
+    .wrapper-field.clearfix
+        // Main field for drag and drop
+        include ../common/field.jade
     
-    // Navigation page
-    include ../common/navigation.jade
+        // Navigation page
+        include ../common/navigation.jade

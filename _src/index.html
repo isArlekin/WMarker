@@ -1,119 +1,142 @@
 <!-- [if IE 8]> <html class="lt-ie9"> <! [endif]-->
 <html>
   <head>
-    <meta name="viewport" content="width=device-width"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8; width=device-width" name="viewport"/>
     <title>WhaterMarker</title>
+    <!-- Подключение шрифтов-->
+    <link rel="stylesheet" type="text/css" href="/fonts/fonts.css"/>
     <!-- Подключение таблиц стилей-->
     <link rel="stylesheet" type="text/css" href="/bower/normalize.css/normalize.css"/>
     <link rel="stylesheet" type="text/css" href="/css/main.css" media="screen, projection, print"/>
+    <link rel="stylesheet" type="text/css" href="/css/field.css" media="screen, projection, print"/>
+    <link rel="stylesheet" type="text/css" href="/css/navigation.css" media="screen, projection, print"/>
+    <link rel="stylesheet" type="text/css" href="/css/options.css" media="screen, projection, print"/>
+    <link rel="stylesheet" type="text/css" href="/css/footer.css" media="screen, projection, print"/>
     <!-- Подключение модернайзера-->
     <link href="/bower/modernizr/modernizr.js"/>
   </head>
   <body>
     <div class="wrapper">
-      <div class="maincontent">
-        <!-- Language page-->
-        <div class="language">
-          <div class="language__ru">РУС</div>
-        </div>
-        <div class="language">
-          <div class="language__en">ENG</div>
-        </div>
-        <!-- Social icons-->
-        <div class="socials">
-          <div class="like">Мне нравится</div>
-        </div>
-        <!-- Main field for drag and drop-->
-        <div class="drag-field">
-          <div class="drag-field__header">Генератор водяных знаков</div>
-          <div class="content-field"></div>
-        </div>
-        <!-- Navigation page-->
-        <div class="navigation">
-          <div class="nav-header">Настройки</div>
-          <!-- Начало--Загрузка основного изображения-->
-          <div class="nav-input">
-            <div class="nav-input__header">Исходное изображение</div>
-            <input class="input-file"/>
-            <div class="download">Загрузить</div>
+      <!-- Language page-->
+      <div class="language">
+        <div class="language__ru">РУС</div>
+        <div class="language__en">ENG</div>
+      </div>
+      <!-- Social icons-->
+      <div class="socials">
+        <div class="socials__like"></div>
+      </div>
+      <div class="maincontent clearfix">
+        <div class="wrapper-field clearfix">
+          <!-- Main field for drag and drop-->
+          <div class="drag-field">
+            <div class="drag-field__header">Генератор водяных знаков</div>
+            <div class="content-field"></div>
           </div>
-          <!-- Конец-->
-          <!-- Начало--Загрузка водяного знака-->
-          <div class="nav-input">
-            <div class="nav-input__header">Водяной знак</div>
-            <input class="input-file"/>
-            <div class="download">Загрузить</div>
+          <!-- Navigation page-->
+          <div class="navigation">
+            <div class="nav-header">Настройки</div>
+            <!-- Начало--Загрузка основного изображения-->
+            <form class="form">
+              <div class="form__input">
+                <div class="form__input-header">Исходное изображение</div>
+                <input type="text" placeholder="Image.jpg" readonly="readonly" class="form__input-text"/>
+                <input type="file" class="form__input-file"/>
+              </div>
+              <!-- Конец-->
+              <!-- Начало--Загрузка водяного знака-->
+              <div class="form__input">
+                <div class="form__input-header">Водяной знак</div>
+                <input type="text" placeholder="Image.jpg" readonly="readonly" class="form__input-text"/>
+                <input type="file" class="form__input-file"/>
+              </div>
+              <!-- Конец-->
+              <!-- Начало--Основной блок навигации-->
+              <div class="location-normal">
+                <div class="location__header">Положение</div>
+                <div class="location__wrapper clearfix">
+                  <div class="location__square">
+                    <ul class="location__square-list clearfix">
+                      <li class="location__square-item"></li>
+                      <li class="location__square-item"></li>
+                      <li class="location__square-item"></li>
+                      <li class="location__square-item"></li>
+                      <li class="location__square-item"></li>
+                      <li class="location__square-item"></li>
+                      <li class="location__square-item"></li>
+                      <li class="location__square-item"></li>
+                      <li class="location__square-item"></li>
+                    </ul>
+                  </div>
+                  <div class="location-pozition clearfix">
+                    <div class="location__navigate clearfix">
+                      <div class="coordinate x">X</div>
+                      <input type="text" placeholder="0" maxlength="3" class="square-nav"/>
+                      <div class="tungle-buttons">
+                        <div class="tungle-up"></div>
+                        <div class="tungle-down"></div>
+                      </div>
+                    </div>
+                    <div class="location__navigate clearfix">
+                      <div class="coordinate y">Y</div>
+                      <input type="text" placeholder="0" maxlength="3" class="square-nav"/>
+                      <div class="tungle-buttons">
+                        <div class="tungle-up"></div>
+                        <div class="tungle-down"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="location__slider">
+                  <div class="location__slider-header">Прозрачность</div>
+                  <div class="slider-opacity"></div>
+                  <input type="text" readonly="readonly" name="slider-opacity" hidden="hidden" class="slider-opacity__value"/>
+                </div>
+              </div>
+              <!-- Конец-->
+              <!-- Начало--Альтернативный блок навигации-->
+              <!--.location-alternative-->
+              <!--    .location__header Положение-->
+              <!--    .location__square-->
+              <!--        ul.location__square-list-->
+              <!--            li.square-list__item-->
+              <!--            li.square-list__item-->
+              <!--            li.square-list__item-->
+              <!--            li.square-list__item-->
+              <!--            li.square-list__item-->
+              <!--            li.square-list__item-->
+              <!--            li.square-list__item-->
+              <!--            li.square-list__item-->
+              <!--            li.square-list__item-->
+              <!--    .location__navigate-->
+              <!--        .x X-->
+              <!--        input.square-nav-->
+              <!--        .direction-->
+              <!--    .location__navigate-->
+              <!--        .y Y-->
+              <!--        input.square-nav-->
+              <!--        .direction-->
+              <!-- Конец-->
+              <!-- Начало--Кнопка submit и reset-->
+              <div class="buttons clearfix">
+                <input type="button" value="Сбросить" class="button reset"/>
+                <input type="submit" value="Отправить" class="button submit"/>
+              </div>
+              <!-- Конец-->
+              
+              
+              
+            </form>
           </div>
-          <!-- Конец-->
-          <!-- Начало--Основной блок навигации-->
-          <div class="location-normal">
-            <div class="location__header">Положение</div>
-            <div class="location__square">
-              <ul class="location__square-list">
-                <li class="square-list__item"></li>
-                <li class="square-list__item"></li>
-                <li class="square-list__item"></li>
-                <li class="square-list__item"></li>
-                <li class="square-list__item"></li>
-                <li class="square-list__item"></li>
-                <li class="square-list__item"></li>
-                <li class="square-list__item"></li>
-                <li class="square-list__item"></li>
-              </ul>
-            </div>
-            <div class="location__navigate">
-              <div class="x">X</div>
-              <input class="square-nav"/>
-              <div class="direction"></div>
-            </div>
-            <div class="location__navigate">
-              <div class="y">Y</div>
-              <input class="square-nav"/>
-              <div class="direction"></div>
-            </div>
-          </div>
-          <!-- Конец-->
-          <!-- Начало--Альтернативный блок навигации-->
-          <!--.location-alternative-->
-          <!--    .location__header Положение-->
-          <!--    .location__square-->
-          <!--        ul.location__square-list-->
-          <!--            li.square-list__item-->
-          <!--            li.square-list__item-->
-          <!--            li.square-list__item-->
-          <!--            li.square-list__item-->
-          <!--            li.square-list__item-->
-          <!--            li.square-list__item-->
-          <!--            li.square-list__item-->
-          <!--            li.square-list__item-->
-          <!--            li.square-list__item-->
-          <!--    .location__navigate-->
-          <!--        .x X-->
-          <!--        input.square-nav-->
-          <!--        .direction-->
-          <!--    .location__navigate-->
-          <!--        .y Y-->
-          <!--        input.square-nav-->
-          <!--        .direction-->
-          <!-- Конец-->
-          <!-- Начало--Слайдер-->
-          <div class="slider"></div>
-          <!-- Конец-->
-          <!-- Начало--Кнопка submit и reset-->
-          <div class="buttons">
-            <input type="button" value="Сбросить" class="buttons__reset"/>
-            <input type="submit" value="Отправить" class="buttons__submit"/>
-          </div>
-          <!-- Конец-->
-          
-          
-          
         </div>
       </div>
     </div>
     <div class="footer">
       <div class="footer__wrapper">&copy; 2015 WhaterMarker. Все права защищены.</div>
     </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/app/bower/jquery/jquery.min.js"><\/script>')</script>
+    <script src="/bower/jquery-ui/jquery-ui.min.js"></script>
     <script src="/js/main.js"></script>
   </body>
 </html>

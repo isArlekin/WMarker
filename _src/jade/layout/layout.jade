@@ -1,20 +1,36 @@
 <!-- [if IE 8]> <html class="lt-ie9"> <! [endif]-->
 html
     head
-        meta(name='viewport' content='width=device-width')
+        meta(http-equiv="Content-Type" content="text/html; charset=UTF-8; width=device-width", name='viewport')
 
         title WhaterMarker
+        // Подключение шрифтов
+        link(rel='stylesheet' type='text/css' href='/fonts/fonts.css')
         // Подключение таблиц стилей
         link(rel='stylesheet' type='text/css' href='/bower/normalize.css/normalize.css')
         link(rel='stylesheet' type='text/css' href='/css/main.css' media='screen, projection, print')
+        link(rel='stylesheet' type='text/css' href='/css/field.css' media='screen, projection, print')
+        link(rel='stylesheet' type='text/css' href='/css/navigation.css' media='screen, projection, print')
+        link(rel='stylesheet' type='text/css' href='/css/options.css' media='screen, projection, print')
+        link(rel='stylesheet' type='text/css' href='/css/footer.css' media='screen, projection, print')
+
 
         // Подключение модернайзера
         link(href='/bower/modernizr/modernizr.js')
     body
         .wrapper
-            .maincontent
+            block options
+            .maincontent.clearfix
 
                 block content
 
         include ../common/footer.jade
+
+
+        script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+        script.
+               window.jQuery || document.write('<script src="/app/bower/jquery/jquery.min.js"><\/script>')
+        script(src="/bower/jquery-ui/jquery-ui.min.js")
+        script(src='/js/main.js')
+
 

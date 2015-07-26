@@ -1,0 +1,19 @@
+.drag-field {
+  float: left;
+  background-color: rgba(46, 54, 65, 0.639); }
+
+.drag-field__header {
+  display: inline-block;
+  margin: 13px 0 30px 25px;
+  font-size: 36px;
+  color: white;
+  text-align: left; }
+
+.content-field {
+  margin: 25px 24px;
+  width: 650px;
+  border: 1px solid #f8f7f7;
+  height: 532px;
+  background-color: #ffffff; }
+
+/*# sourceMappingURL=field.css.map */

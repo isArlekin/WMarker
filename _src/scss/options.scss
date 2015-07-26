@@ -1,0 +1,28 @@
+.language {
+  position: absolute;
+  top: 102px;
+  &__ru,&__en {
+    padding: 3.5px 2.1px 3.5px 2.1px;
+    cursor: pointer;
+    background-color: rgba(241, 241, 245, 0.702);
+    font-size: 20px;
+    color: rgb(142, 146, 152);
+  }
+  &__ru {
+    border-bottom: 1px solid #a5a7ac;
+  }
+}
+.socials {
+  position: absolute;
+  top: 189px;
+  &__like {
+    cursor: pointer;
+    width: 43px;
+    height: 41px;
+    background: rgba(241, 241, 245, 0.702) url("../img/like.png") no-repeat 50% 47%;
+  }
+  
+}
+
+
+

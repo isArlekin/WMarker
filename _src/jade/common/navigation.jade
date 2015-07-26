@@ -2,73 +2,84 @@
 
     .nav-header Настройки
     // Начало--Загрузка основного изображения
-    .nav-input
-        .nav-input__header Исходное изображение
-        input.input-file
-        .download Загрузить
-    // Конец
-    // Начало--Загрузка водяного знака
-    .nav-input
-        .nav-input__header Водяной знак
-        input.input-file
-        .download Загрузить
-    // Конец
-    // Начало--Основной блок навигации
-    .location-normal
-        .location__header Положение
-        .location__square
-            ul.location__square-list
-                li.square-list__item
-                li.square-list__item
-                li.square-list__item
-                li.square-list__item
-                li.square-list__item
-                li.square-list__item
-                li.square-list__item
-                li.square-list__item
-                li.square-list__item
-        .location__navigate
-            .x X
-            input.square-nav
-            .direction
-        .location__navigate
-            .y Y
-            input.square-nav
-            .direction
-    // Конец
-    // Начало--Альтернативный блок навигации
+    form.form
+        .form__input
+            .form__input-header Исходное изображение
+            input.form__input-text(type="text" placeholder="Image.jpg" readonly)
+            input.form__input-file(type="file")
+        // Конец
+        // Начало--Загрузка водяного знака
+        .form__input
+            .form__input-header Водяной знак
+            input.form__input-text(type="text" placeholder="Image.jpg" readonly)
+            input.form__input-file(type="file")
+        // Конец
+        // Начало--Основной блок навигации
+        .location-normal
+            .location__header Положение
+            .location__wrapper.clearfix
+                .location__square
+                    ul.location__square-list.clearfix
+                        li.location__square-item
+                        li.location__square-item
+                        li.location__square-item
+                        li.location__square-item
+                        li.location__square-item
+                        li.location__square-item
+                        li.location__square-item
+                        li.location__square-item
+                        li.location__square-item
+                .location-pozition.clearfix
+                    .location__navigate.clearfix
+                        .coordinate.x X
+                        input.square-nav(type="text" placeholder="0" maxlength="3")
+                        .tungle-buttons
+                            .tungle-up
+                            .tungle-down
+                    .location__navigate.clearfix
+                        .coordinate.y Y
+                        input.square-nav(type="text" placeholder="0" maxlength="3")
+                        .tungle-buttons
+                            .tungle-up
+                            .tungle-down
+            .location__slider
+                .location__slider-header Прозрачность
+                .slider-opacity
+                input.slider-opacity__value(type="text", readonly, name="slider-opacity" hidden)
 
-    //.location-alternative
-    //    .location__header Положение
-    //    .location__square
-    //        ul.location__square-list
-    //            li.square-list__item
-    //            li.square-list__item
-    //            li.square-list__item
-    //            li.square-list__item
-    //            li.square-list__item
-    //            li.square-list__item
-    //            li.square-list__item
-    //            li.square-list__item
-    //            li.square-list__item
-    //    .location__navigate
-    //        .x X
-    //        input.square-nav
-    //        .direction
-    //    .location__navigate
-    //        .y Y
-    //        input.square-nav
-    //        .direction
-    // Конец
 
-    // Начало--Слайдер
-    .slider
-    // Конец
-    // Начало--Кнопка submit и reset
-    .buttons
-        input.buttons__reset(type="button" value="Сбросить")
-        input.buttons__submit(type="submit" value="Отправить")
-    // Конец
+
+        // Конец
+        // Начало--Альтернативный блок навигации
+
+        //.location-alternative
+        //    .location__header Положение
+        //    .location__square
+        //        ul.location__square-list
+        //            li.square-list__item
+        //            li.square-list__item
+        //            li.square-list__item
+        //            li.square-list__item
+        //            li.square-list__item
+        //            li.square-list__item
+        //            li.square-list__item
+        //            li.square-list__item
+        //            li.square-list__item
+        //    .location__navigate
+        //        .x X
+        //        input.square-nav
+        //        .direction
+        //    .location__navigate
+        //        .y Y
+        //        input.square-nav
+        //        .direction
+        // Конец
+
+        // Начало--Кнопка submit и reset
+        .buttons.clearfix
+            input.button.reset(type="button" value="Сбросить")
+            input.button.submit(type="submit" value="Отправить")
+        // Конец
 
 
 
